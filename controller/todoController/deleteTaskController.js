@@ -5,14 +5,16 @@ const deleteTaskController = async (req, res) => {
   const { task } = req.body;
 
   try {
-    await Todo.findById(id).then((todo) => {
-      item = todo.task.filter((e) => e != task);
-      item.save();
-    });
+    let todo = await Todo.findById(id);
+    if (!todo.task.includes(task)) return res.send("Task Doesn't exist");
 
+    let updatedtask = todo.task.filter((e) => e != task);
+    todo.task.splice(0, todo.task.length);
+    todo.task.push(...updatedtask);
+    todo.save();
     res.status(200).json({
       sucess: true,
-      updatedTodo,
+      todo,
     });
   } catch (error) {
     res.send(error.message);
