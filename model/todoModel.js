@@ -5,7 +5,10 @@ const TodoModel = Schema({
     type: String,
     require: true,
   },
-  task: [String],
+  task: {
+    type: [String],
+    index: true,
+  },
 });
 
 module.exports = mongoose.model("todo", TodoModel);
