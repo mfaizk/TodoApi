@@ -8,7 +8,8 @@ const addTaskController = async (req, res) => {
 
   try {
     const todo = await Todo.findById(id);
-    todo.task.push(task);
+    console.log(task);
+    todo.task.push({ task });
     await todo.save();
     res.status(200).json({
       sucess: true,
