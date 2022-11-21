@@ -7,10 +7,12 @@
 
 ## Functionality included
 
+- Get All Todo
 - Create Todo
 - Update Todo
 - Delete Todo
 - Add task to todo
+- Get all todo
 - Delete task from todo
 - Update task in todo
 
