@@ -6,16 +6,8 @@ const editTaskController = async (req, res) => {
 
   try {
     const todo = await Todo.findById(todoId);
-    const existingTask = todo.task.map((e) => {
-      if (taskId == e._id) {
-        e.task = editedtask;
-        return e;
-      } else {
-        return e;
-      }
-    });
-    todo.task.splice(0, todo.task.length);
-    todo.task.push(...existingTask);
+    const taskIndex = todo.task.findIndex((e) => e._id == taskId);
+    todo.task[taskIndex].task = editedtask;
     todo.save();
     res.send(todo);
   } catch (error) {
