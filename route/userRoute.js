@@ -18,13 +18,13 @@ router.get("/", (req, res) => {
 router.post("/create", createTodoController);
 router.put("/updateTodo/:id", editTodoController);
 router.delete("/deleteTodo/:id", deleteTodoController);
-router.get("/getTodo", getTodoController);
+router.get("/getTodo/:sortBy", getTodoController);
 router.get("/searchTodo", searchTodoContoller);
 
 // TASK ROUTES
 router.put("/addTask/:id", addTaskController);
 router.delete("/deleteTask/:todoId/:taskId", deleteTaskController);
-router.get("/getTask/:id", getTaskController);
+router.get("/getTask/:id/:sortBy", getTaskController);
 router.put("/editTask/:todoId/:taskId", editTaskController);
 router.get("/searchTask/:id", searchTaskController);
 
