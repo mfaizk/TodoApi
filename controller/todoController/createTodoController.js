@@ -2,7 +2,7 @@ const User = require("../../model/todoModel");
 
 const createTodoController = async (req, res) => {
   const { title } = req.body;
-  if (!title) res.send("Empty title");
+  if (!title) res.status(401).send("Empty title");
 
   try {
     const todo = await User.create({ title });

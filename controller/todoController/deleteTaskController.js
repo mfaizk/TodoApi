@@ -1,22 +1,14 @@
 const Todo = require("../../model/todoModel");
 
 const deleteTaskController = async (req, res) => {
-  const { id } = req.params;
-  const { taskId } = req.body;
+  const { todoId, taskId } = req.params;
 
   try {
-    let todo = await Todo.findById(id);
-    // console.log(todo);
-    updatedTodo = todo.task.filter((e) => e._id != taskId);
-    // console.log(timestamp);
-    todo.task.splice(0, todo.task.length);
-    todo.task.push(...updatedTodo);
-    // console.log(todo.task);
+    let todo = await Todo.findById(todoId);
+    let taskIndex = todo.task.findIndex((e) => e._id == taskId);
+    todo.task.splice(taskIndex, 1);
     await todo.save();
-    res.status(200).json({
-      sucess: true,
-      todo,
-    });
+    res.status(200).send(todo);
   } catch (error) {
     res.send(error.message);
   }

@@ -9,6 +9,7 @@ const getTodoController = require("../controller/todoController/getTodoControlle
 const getTaskController = require("../controller/todoController/getTaskController");
 const editTaskController = require("../controller/todoController/editTaskController");
 const searchTodoContoller = require("../controller/todoController/searchTodoController");
+const searchTaskController = require("../controller/todoController/searchTaskController");
 router.get("/", (req, res) => {
   res.send("Hello");
 });
@@ -22,8 +23,9 @@ router.get("/searchTodo", searchTodoContoller);
 
 // TASK ROUTES
 router.put("/addTask/:id", addTaskController);
-router.delete("/deletetask/:id", deleteTaskController);
+router.delete("/deleteTask/:todoId/:taskId", deleteTaskController);
 router.get("/getTask/:id", getTaskController);
 router.put("/editTask/:todoId/:taskId", editTaskController);
+router.get("/searchTask/:id", searchTaskController);
 
 module.exports = router;

@@ -16,6 +16,7 @@
 - Get all Task in todo
 - Delete task from todo
 - Update task in todo
+- Search Task in todo
 
 ## runtime environment
 
