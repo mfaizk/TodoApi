@@ -8,6 +8,7 @@ const deleteTaskController = require("../controller/todoController/deleteTaskCon
 const getTodoController = require("../controller/todoController/getTodoController");
 const getTaskController = require("../controller/todoController/getTaskController");
 const editTaskController = require("../controller/todoController/editTaskController");
+const searchTodoContoller = require("../controller/todoController/searchTodoController");
 router.get("/", (req, res) => {
   res.send("Hello");
 });
@@ -17,6 +18,7 @@ router.post("/create", createTodoController);
 router.put("/updateTodo/:id", editTodoController);
 router.delete("/deleteTodo/:id", deleteTodoController);
 router.get("/getTodo", getTodoController);
+router.get("/searchTodo", searchTodoContoller);
 
 // TASK ROUTES
 router.put("/addTask/:id", addTaskController);
