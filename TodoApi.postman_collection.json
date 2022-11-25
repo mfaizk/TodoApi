@@ -138,7 +138,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"taskId\":\"637a568e78b2830ae898b6dd\"\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -146,7 +146,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/deletetask/637a565c78b2830ae898b6d0",
+					"raw": "http://localhost:3000/deletetask/637a565c78b2830ae898b6d0/637cc8334e37ba8b715914df",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -154,7 +154,8 @@
 					"port": "3000",
 					"path": [
 						"deletetask",
-						"637a565c78b2830ae898b6d0"
+						"637a565c78b2830ae898b6d0",
+						"637cc8334e37ba8b715914df"
 					]
 				}
 			},
@@ -212,9 +213,64 @@
 		},
 		{
 			"name": "searchTodo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"searchText\":\"j\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/searchTodo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"searchTodo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchTask",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"searchText\":\"j\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/searchTask/637a565c78b2830ae898b6d0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"searchTask",
+						"637a565c78b2830ae898b6d0"
+					]
+				}
 			},
 			"response": []
 		}
