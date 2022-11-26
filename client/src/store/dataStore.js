@@ -1,8 +1,12 @@
 import { createStore } from "zustand";
-
+import axios from "axios";
 const dataStore = (set) => ({
   user: {},
   data: {},
 
-  getUser: () => {},
+  getUser: () => {
+    axios.get();
+  },
 });
+
+export const useDataStore = createStore(dataStore);
