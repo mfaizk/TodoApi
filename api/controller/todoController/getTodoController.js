@@ -1,6 +1,7 @@
 const Todo = require("../../model/todoModel");
 
 const getTodoController = async (req, res) => {
+  console.log(req.user);
   const { sortBy } = req.params;
   if (sortBy == "default") {
     try {
