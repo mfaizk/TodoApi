@@ -25,11 +25,11 @@ router.get("/getTodo/:sortBy", auth, getTodoController);
 router.get("/searchTodo", auth, searchTodoContoller);
 
 // TASK ROUTES
-router.put("/addTask/:id", addTaskController);
-router.delete("/deleteTask/:todoId/:taskId", deleteTaskController);
-router.get("/getTask/:id/:sortBy", getTaskController);
-router.put("/editTask/:todoId/:taskId", editTaskController);
-router.get("/searchTask/:id", searchTaskController);
+router.put("/addTask/:id", auth, addTaskController);
+router.delete("/deleteTask/:todoId/:taskId", auth, deleteTaskController);
+router.get("/getTask/:id/:sortBy", auth, getTaskController);
+router.put("/editTask/:todoId/:taskId", auth, editTaskController);
+router.get("/searchTask/:id", auth, searchTaskController);
 
 // AUTH ROUTES
 router.post("/signup", SignUpController);

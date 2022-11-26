@@ -5,15 +5,18 @@ const addTaskController = async (req, res) => {
   const { task } = req.body;
 
   if (!task) res.status(401).send("Enter valid data");
+  const data = await Todo.findById(req.user.id);
 
+  if (!data) return res.send({ msg: "No task exist" });
   try {
-    const todo = await Todo.findById(id);
-    // console.log(task);
-    todo.task.push({ task });
-    await todo.save();
-    res.status(200).json({
-      sucess: true,
-      todo,
+    const todoIndex = data.todos.findIndex((e) => e._id == id);
+    // console.log(data.todos[todoIndex].task);
+
+    data.todos[todoIndex].task.push({ task });
+    await data.save();
+    res.status(200).send({
+      msg: "Success",
+      data: data.todos[todoIndex],
     });
   } catch (error) {
     res.send(error.message);

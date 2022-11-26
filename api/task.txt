@@ -1,3 +1,5 @@
 createTodo(complete)
 editTodo(complete)
 deleteTodo(complete)
+getTodo(complete)
+addTask(complete)
