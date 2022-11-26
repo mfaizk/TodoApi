@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\":\"Bread\"\n}",
+					"raw": "{\n    \"title\":\"Milk\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -40,7 +40,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/getTodo/default",
+					"raw": "http://localhost:3000/getTodo/uptime",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -48,7 +48,7 @@
 					"port": "3000",
 					"path": [
 						"getTodo",
-						"default"
+						"uptime"
 					]
 				}
 			},
@@ -61,7 +61,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\":\"Butter\"\n}",
+					"raw": "{\n    \"title\":\"Toast\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -69,7 +69,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/updateTodo/6380b288c3811876b7e7bd58",
+					"raw": "http://localhost:3000/updateTodo/6382118a6e297bd9722d5ae7",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -77,7 +77,7 @@
 					"port": "3000",
 					"path": [
 						"updateTodo",
-						"6380b288c3811876b7e7bd58"
+						"6382118a6e297bd9722d5ae7"
 					]
 				}
 			},
@@ -89,7 +89,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/deleteTodo/6378b3397477b3761d23631d",
+					"raw": "http://localhost:3000/deleteTodo/638207a8b538f1a8aa72e11d",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -97,7 +97,7 @@
 					"port": "3000",
 					"path": [
 						"deleteTodo",
-						"6378b3397477b3761d23631d"
+						"638207a8b538f1a8aa72e11d"
 					]
 				}
 			},
@@ -110,7 +110,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"task\":\"Secondary task\"\n}",
+					"raw": "{\n    \"task\":\"Tertiary task\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -118,7 +118,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/addTask/6380b2d4c3811876b7e7bd62",
+					"raw": "http://localhost:3000/addTask/6382118a6e297bd9722d5ae7",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -126,7 +126,7 @@
 					"port": "3000",
 					"path": [
 						"addTask",
-						"6380b2d4c3811876b7e7bd62"
+						"6382118a6e297bd9722d5ae7"
 					]
 				}
 			},
@@ -147,7 +147,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/deletetask/637a565c78b2830ae898b6d0/637cc8334e37ba8b715914df",
+					"raw": "http://localhost:3000/deletetask/6382118a6e297bd9722d5ae7/63821c5f6ecc7107a12fca38",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -155,8 +155,8 @@
 					"port": "3000",
 					"path": [
 						"deletetask",
-						"637a565c78b2830ae898b6d0",
-						"637cc8334e37ba8b715914df"
+						"6382118a6e297bd9722d5ae7",
+						"63821c5f6ecc7107a12fca38"
 					]
 				}
 			},
@@ -164,11 +164,18 @@
 		},
 		{
 			"name": "getTask",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "http://localhost:3000/getTask/6380b288c3811876b7e7bd58/uptime",
+					"raw": "http://localhost:3000/getTask/6382118a6e297bd9722d5ae7/uptime",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -176,7 +183,7 @@
 					"port": "3000",
 					"path": [
 						"getTask",
-						"6380b288c3811876b7e7bd58",
+						"6382118a6e297bd9722d5ae7",
 						"uptime"
 					]
 				}
@@ -190,7 +197,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"editedtask\":\"Edit TASK\"\n}",
+					"raw": "{\n    \"editedtask\":\"Primary\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -198,7 +205,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/editTask/6380b288c3811876b7e7bd58/6380b2bdc3811876b7e7bd5c",
+					"raw": "http://localhost:3000/editTask/6382118a6e297bd9722d5ae7/63822d13d7d999ab132ab78b",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -206,8 +213,8 @@
 					"port": "3000",
 					"path": [
 						"editTask",
-						"6380b288c3811876b7e7bd58",
-						"6380b2bdc3811876b7e7bd5c"
+						"6382118a6e297bd9722d5ae7",
+						"63822d13d7d999ab132ab78b"
 					]
 				}
 			},
@@ -223,7 +230,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"searchText\":\"j\"\n}",
+					"raw": "{\n    \"searchText\":\"r\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -254,7 +261,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"searchText\":\"j\"\n}",
+					"raw": "{\n    \"searchText\":\"u\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -262,7 +269,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/searchTask/637a565c78b2830ae898b6d0",
+					"raw": "http://localhost:3000/searchTask/6382118a6e297bd9722d5ae7",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -270,7 +277,69 @@
 					"port": "3000",
 					"path": [
 						"searchTask",
-						"637a565c78b2830ae898b6d0"
+						"6382118a6e297bd9722d5ae7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signUp",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"g@g.com\",\n    \"password\":\"yolo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"g@g.com\",\n    \"password\":\"yolo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signin"
 					]
 				}
 			},
