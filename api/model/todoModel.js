@@ -12,7 +12,7 @@ const TodoModel = Schema(
   {
     title: {
       type: String,
-      require: true,
+      required: true,
     },
     task: {
       type: [TaskModel],
@@ -21,4 +21,12 @@ const TodoModel = Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("todo", TodoModel);
+const UserTodoModel = Schema({
+  todos: [TodoModel],
+  _id: {
+    type: String,
+    required: true,
+  },
+});
+
+module.exports = mongoose.model("todo", UserTodoModel);

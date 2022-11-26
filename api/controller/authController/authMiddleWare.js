@@ -5,8 +5,11 @@ const auth = async (req, res, next) => {
   const token = Object.keys(req.cookies);
   const data = jwt.decode(token[0], SECRET);
   if (!data) return res.status(401).send({ msg: "invalid cookie" });
-  const currentUser = await User.findOne({ email: data.email });
-  currentUser.password = undefined;
+  const u = await User.findOne({ email: data.email });
+  const currentUser = {
+    id: u.id,
+    email: u.email,
+  };
   req.user = currentUser;
   return next();
 };
