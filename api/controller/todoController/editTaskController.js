@@ -4,12 +4,25 @@ const editTaskController = async (req, res) => {
   const { todoId, taskId } = req.params;
   const { editedtask } = req.body;
 
+  // try {
+  //   const todo = await Todo.findById(todoId);
+  //   const taskIndex = todo.task.findIndex((e) => e._id == taskId);
+  //   todo.task[taskIndex].task = editedtask;
+  //   todo.save();
+  //   res.send(todo);
+  // } catch (error) {
+  //   res.send(error.message);
+  // }
   try {
-    const todo = await Todo.findById(todoId);
-    const taskIndex = todo.task.findIndex((e) => e._id == taskId);
-    todo.task[taskIndex].task = editedtask;
-    todo.save();
-    res.send(todo);
+    const data = await Todo.findById(req.user.id);
+    if (!data) return res.send({ msg: "todo not found" });
+    const todoIndex = data.todos.findIndex((e) => e._id == todoId);
+    const taskIndex = data.todos[todoIndex].task.findIndex(
+      (e) => e._id == taskId
+    );
+    data.todos[todoIndex].task[taskIndex].task = editedtask;
+    await data.save();
+    res.status(201).send(data.todos[todoIndex].task[taskIndex]);
   } catch (error) {
     res.send(error.message);
   }
