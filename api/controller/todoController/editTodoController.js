@@ -1,19 +1,15 @@
 const Todo = require("../../model/todoModel");
-
 const editTodoController = async (req, res) => {
   const { id } = req.params;
   const { title } = req.body;
-  //   console.log(id);
-  //   res.send(id);
-  //   console.log(title);
-
+  if (!title) return res.status(401).send({ msg: "Insufficient data" });
+  const data = await Todo.findById(req.user.id);
+  if (!data) return res.status(401).send({ msg: "todo not found" });
+  const todoIndex = data.todos.findIndex((e) => e.id == id);
   try {
-    console.log(id);
-    const todo = await Todo.findById(id);
-    console.log(todo);
-    todo.title = title;
-    todo.save();
-    res.status(200).json(todo);
+    data.todos[todoIndex].title = title;
+    data.save();
+    res.status(200).send(data.todos[todoIndex]);
   } catch (error) {
     res.send(error.message);
   }
